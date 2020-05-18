@@ -17,6 +17,13 @@ async function onMessage(msg) {
       const results = await googleImages.search(s)
       var rnd = Math.floor(Math.random() * results.length)
       msg.reply(results[rnd].url)
+      console.log(
+        JSON.parse({
+          isSuccess: true,
+          url: results[rnd].url,
+          message: 'mantappu',
+        })
+      )
     } catch (e) {
       console.error(e)
       msg.channel.send('Error happened, see the console')

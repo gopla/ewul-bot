@@ -17,7 +17,7 @@ async function onMessage(msg) {
       const results = await googleImages.search(s)
       var rnd = Math.floor(Math.random() * results.length)
       let pict = results[rnd].url
-      msg.reply(pict)
+      msg.reply(results[rnd].url)
       console.log({
         isSuccess: true,
         url: pict,

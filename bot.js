@@ -16,10 +16,11 @@ async function onMessage(msg) {
     try {
       const results = await googleImages.search(s)
       var rnd = Math.floor(Math.random() * results.length)
-      msg.reply(results[rnd].url)
+      let pict = results[rnd].url
+      msg.reply(pict)
       console.log({
         isSuccess: true,
-        url: results[rnd].url,
+        url: pict,
         message: 'mantappu',
       })
     } catch (e) {
